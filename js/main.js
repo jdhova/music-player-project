@@ -30,14 +30,22 @@ function loadSong(song){
     cover.src=`img/${song}.jpeg`
 }
 
+function playSong(){
+    wrapper.classList.add('play')
+    audio.play()
+}
+function pauseSong(){
+    wrapper.classList.remove('play')
+    audio.pause()
+}
 // Event Listner 
 
 play.addEventListener("click",(isPlaying) => {
     isPlaying = wrapper.classList.contains("play")
 
-    if(isPlaying){
-        pauseSong()
+    if(!isPlaying){
+        playSong()
     } else {
-        
+        pauseSong()
     }
 })
