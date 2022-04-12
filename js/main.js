@@ -107,3 +107,5 @@ audio.addEventListener("timeupdate",updateProgress)
 
 // progress on click
 progressContainer.addEventListener("click",setProgress)
+
+audio.addEventListener("ended",nextSong)
