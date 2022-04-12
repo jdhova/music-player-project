@@ -133,7 +133,6 @@ main.play .main-container {
   background-color: #27c5ff;
   border-radius: 5px;
   height: 100%;
-  /* width: 50%; */
   width: 0%;
   transition: width 100ms linear;
 }
