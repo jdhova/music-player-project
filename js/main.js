@@ -3,10 +3,12 @@ const play = document.getElementById('play')
 const prev = document.getElementById('prev')
 const next = document.getElementById('next')
 const audio = document.querySelector('audio')
+const random = document.getElementById('random') 
 const progressContainer = document.querySelector('.progress-container')
 const progress= document.querySelector('.progress')
 const tittle= document.querySelector('h2')
 const cover = document.querySelector('img')
+
 
 
 // songs tittle 
@@ -43,12 +45,18 @@ function pauseSong(){
     audio.pause()
 }
 
+// Function to play random song
+function shuffleMusic(){
+    const randomNumber = Math.floor(Math.random()*songs.length)
+    loadSong(songs[randomNumber])
+    playSong()
+}
+
+
 function prevSong(){
 songIndex--
 
-// if(songIndex < 0){
-//     songIndex = songs.length-1 
-// }
+
 songIndex < 0? songIndex = songs.length-1 : null
 
 loadSong(songs[songIndex])
@@ -58,9 +66,7 @@ playSong()
 function nextSong(){
     songIndex++
 
-// if(songIndex > songs.length-1){
-//     songIndex = 0 
-// }
+
 songIndex > songs.length-1? songIndex = 0 : null
 
 loadSong(songs[songIndex])
@@ -68,8 +74,7 @@ playSong()
 }
 
 function updateProgress(e) {
-    // const currentTime = e.srcElement
-    // const duration = e.srcElement
+   
 
     const {currentTime,duration}= e.srcElement
     const progressPercent = (currentTime/duration)*100
@@ -90,11 +95,7 @@ play.addEventListener("click",(isPlaying) => {
 
     !isPlaying ? playSong() : pauseSong()
 
-    // if(!isPlaying){
-    //     playSong()
-    // } else {
-    //     pauseSong()
-    // }
+ 
 })
 
 // change Song
@@ -109,3 +110,11 @@ audio.addEventListener("timeupdate",updateProgress)
 progressContainer.addEventListener("click",setProgress)
 
 audio.addEventListener("ended",nextSong)
+
+random.addEventListener("click",shuffleMusic)
+
+//  function that Schuffle music 
+
+// function that shuffles music 
+
+
