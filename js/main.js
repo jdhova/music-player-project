@@ -17,7 +17,7 @@ const cover = document.querySelector('img')
 
 // songs tittle 
 
-const songs = ['Welcome','Witness','Work','Yo']
+const songs = ['Burna','Eltee','Pheelz','Timaya','Wizkid']
 
 // keeping track of the song
 
